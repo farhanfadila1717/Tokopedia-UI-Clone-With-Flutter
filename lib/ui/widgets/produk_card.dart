@@ -25,9 +25,9 @@ class ProdukCard extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: accentColor3.withOpacity(0.3),
-            blurRadius: 5,
-            offset: Offset(0, 0.2),
+            color: Colors.grey[600].withOpacity(0.5),
+            blurRadius: 4,
+            offset: Offset(0, 1),
           ),
         ],
       ),
@@ -81,7 +81,7 @@ class ProdukCard extends StatelessWidget {
                                   style: whiteTextFont.copyWith(
                                     color: Colors.pink[600],
                                     fontSize: 10,
-                                    fontWeight: FontWeight.w500,
+                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
                               ),

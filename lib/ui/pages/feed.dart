@@ -220,7 +220,12 @@ class _FeedPageState extends State<FeedPage> with TickerProviderStateMixin {
                                         height: 40,
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
-                                          color: mainColor,
+                                          color: Colors.lightGreen,
+                                        ),
+                                        child: Icon(
+                                          Icons.shopping_basket,
+                                          size: 20,
+                                          color: Colors.white,
                                         ),
                                       ),
                                       SizedBox(
@@ -265,35 +270,223 @@ class _FeedPageState extends State<FeedPage> with TickerProviderStateMixin {
                                     maxLines: 4,
                                   ),
                                 ),
+                                Container(
+                                  height: 300,
+                                  width: double.infinity,
+                                  child: GridView.count(
+                                    primary: false,
+                                    padding: EdgeInsets.all(0),
+                                    crossAxisCount: 2,
+                                    crossAxisSpacing: 5,
+                                    mainAxisSpacing: 5,
+                                    children: [
+                                      Container(
+                                        height: double.infinity,
+                                        decoration: BoxDecoration(
+                                          color: mainColor,
+                                          image: DecorationImage(
+                                              image: AssetImage(
+                                                  dummyProduk[0].fotoProduk),
+                                              fit: BoxFit.cover),
+                                        ),
+                                      ),
+                                      Container(
+                                        height: double.infinity,
+                                        decoration: BoxDecoration(
+                                          color: mainColor,
+                                          image: DecorationImage(
+                                              image: AssetImage(
+                                                  dummyProduk[1].fotoProduk),
+                                              fit: BoxFit.cover),
+                                        ),
+                                      ),
+                                      Container(
+                                        height: double.infinity,
+                                        decoration: BoxDecoration(
+                                          color: mainColor,
+                                          image: DecorationImage(
+                                              image: AssetImage(
+                                                  dummyProduk[2].fotoProduk),
+                                              fit: BoxFit.cover),
+                                        ),
+                                      ),
+                                      Container(
+                                        height: double.infinity,
+                                        decoration: BoxDecoration(
+                                          color: mainColor,
+                                          image: DecorationImage(
+                                            image: AssetImage(
+                                                dummyProduk[3].fotoProduk),
+                                            fit: BoxFit.cover,
+                                            colorFilter: ColorFilter.mode(
+                                                Colors.black.withOpacity(0.4),
+                                                BlendMode.darken),
+                                          ),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            "+3 Lihat Lainya",
+                                            style: whiteTextFont.copyWith(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
                               ],
                             ),
                           ),
                           Container(
-                            height: 150,
                             width: widthSizeMargin,
-                            margin:
-                                EdgeInsets.symmetric(horizontal: defaultMargin),
-                            color: accentColor2,
+                            margin: EdgeInsets.symmetric(
+                                horizontal: defaultMargin, vertical: 10),
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: accentColor3.withOpacity(0.5),
+                                  blurRadius: 5,
+                                  offset: Offset(0, 1),
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              children: [
+                                Container(
+                                  height: 40,
+                                  width: double.infinity,
+                                  child: Row(
+                                    children: [
+                                      Container(
+                                        width: 40,
+                                        height: 40,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: Colors.lightGreen,
+                                        ),
+                                        child: Icon(
+                                          Icons.shopping_basket,
+                                          size: 20,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 6,
+                                      ),
+                                      Container(
+                                        height: 40,
+                                        width: widthSizeMargin - 66,
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            Text(
+                                              "toko palu gada".toLowerCase(),
+                                              style: blackTextFont.copyWith(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                            Text(
+                                              "10 menit yang lalu",
+                                              style: greyTextFont.copyWith(
+                                                fontSize: 10,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.symmetric(vertical: 6),
+                                  child: Text(
+                                    "Khusus untukmu, klik gambar produk untuk beli sebelum kehabisan!",
+                                    style: greyTextFont.copyWith(
+                                        fontSize: 12, height: 1.5),
+                                    softWrap: true,
+                                    maxLines: 4,
+                                  ),
+                                ),
+                                Container(
+                                  height: 300,
+                                  width: double.infinity,
+                                  child: GridView.count(
+                                    primary: false,
+                                    padding: EdgeInsets.all(0),
+                                    crossAxisCount: 2,
+                                    crossAxisSpacing: 5,
+                                    mainAxisSpacing: 5,
+                                    children: [
+                                      Container(
+                                        height: double.infinity,
+                                        decoration: BoxDecoration(
+                                          color: mainColor,
+                                          image: DecorationImage(
+                                              image: AssetImage(
+                                                  dummyProduk[0].fotoProduk),
+                                              fit: BoxFit.cover),
+                                        ),
+                                      ),
+                                      Container(
+                                        height: double.infinity,
+                                        decoration: BoxDecoration(
+                                          color: mainColor,
+                                          image: DecorationImage(
+                                              image: AssetImage(
+                                                  dummyProduk[1].fotoProduk),
+                                              fit: BoxFit.cover),
+                                        ),
+                                      ),
+                                      Container(
+                                        height: double.infinity,
+                                        decoration: BoxDecoration(
+                                          color: mainColor,
+                                          image: DecorationImage(
+                                              image: AssetImage(
+                                                  dummyProduk[2].fotoProduk),
+                                              fit: BoxFit.cover),
+                                        ),
+                                      ),
+                                      Container(
+                                        height: double.infinity,
+                                        decoration: BoxDecoration(
+                                          color: mainColor,
+                                          image: DecorationImage(
+                                            image: AssetImage(
+                                                dummyProduk[3].fotoProduk),
+                                            fit: BoxFit.cover,
+                                            colorFilter: ColorFilter.mode(
+                                                Colors.black.withOpacity(0.4),
+                                                BlendMode.darken),
+                                          ),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            "+3 Lihat Lainya",
+                                            style: whiteTextFont.copyWith(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                           SizedBox(
                             height: 100,
-                          ),
-                          Container(
-                            height: 150,
-                            width: widthSizeMargin,
-                            margin:
-                                EdgeInsets.symmetric(horizontal: defaultMargin),
-                            color: accentColor1,
-                          ),
-                          SizedBox(
-                            height: 100,
-                          ),
-                          Container(
-                            height: 150,
-                            width: widthSizeMargin,
-                            margin:
-                                EdgeInsets.symmetric(horizontal: defaultMargin),
-                            color: accentColor1,
                           ),
                         ],
                       ),
@@ -350,6 +543,7 @@ class _FeedPageState extends State<FeedPage> with TickerProviderStateMixin {
     );
   }
 
+// NOTE: SecondAppBar
   Widget secondAppbarWidget(double widthSize) => Align(
         alignment: Alignment.topCenter,
         child: Container(
@@ -425,12 +619,6 @@ class _FeedPageState extends State<FeedPage> with TickerProviderStateMixin {
               width: widthSize,
               decoration: BoxDecoration(
                 color: accentColor1,
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  stops: [0, 0.35],
-                  colors: [Color(0xFF93DE97), accentColor1],
-                ),
               ),
             ),
           ),

@@ -135,7 +135,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     double widthSize = MediaQuery.of(context).size.width;
-    List<Produk> produks = dummyProduk.sublist(0, 3);
+    List<Produk> produks = dummyProduk.sublist(0, 4);
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
@@ -566,9 +566,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         ),
                       ),
                       Container(
-                        height: 250,
+                        height: 300,
                         width: widthSize,
                         margin: EdgeInsets.symmetric(vertical: 10),
+                        padding: EdgeInsets.symmetric(vertical: 25),
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              mainColor,
+                              Colors.deepPurple,
+                            ],
+                          ),
+                        ),
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: produks.length,
@@ -624,9 +635,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         ),
                       ),
                       Wrap(
-                        runSpacing: 10,
                         spacing: 10,
-                        children: generateProdukWidgets(context, 300),
+                        runSpacing: 10,
+                        children: listOfProduk(context, 300),
+                      ),
+                      SizedBox(
+                        height: 100,
                       ),
                     ],
                   ),
@@ -773,12 +787,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ),
         ),
       );
-
-  List<Widget> generateProdukWidgets(BuildContext context, double height) {
+  List<Widget> listOfProduk(BuildContext context, double height) {
     double width =
         (MediaQuery.of(context).size.width - 2 * defaultMargin - 10) / 2;
 
-    return dummyProduk
+    List<Produk> produks = dummyProduk.sublist(4, 10);
+
+    return produks
         .map((e) => ProdukCard(
               produk: e,
               height: height,
