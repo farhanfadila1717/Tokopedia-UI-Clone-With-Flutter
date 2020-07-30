@@ -71,10 +71,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             .animate(colorAnimationController);
     iconColorTween = ColorTween(begin: Colors.white, end: accentColor3)
         .animate(colorAnimationController);
-    scrollControlllerSingle = ScrollController()
-      ..addListener(() {
-        // print("offset = ${scrollControlllerSingle.offset}");
-      });
 
     super.initState();
     _fetchPrefs();
@@ -90,24 +86,19 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       if (y > 83) {
         setState(() {
           secondAppBar = false;
-          print(y);
         });
         if (scrollInfo.metrics.pixels > 100) {
           setState(() {
             brightnessCutom = Brightness.dark;
-            print(y);
           });
         } else {
           setState(() {
             brightnessCutom = Brightness.light;
-            print(y);
           });
         }
       } else if (y < 83) {
         setState(() {
           secondAppBar = true;
-
-          print(y);
         });
 
         if (y > 50) {
@@ -555,13 +546,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               ],
                             ),
                             Align(
-                                alignment: Alignment.bottomRight,
-                                child: Text(
-                                  "Lihat Semua",
-                                  style: greenTextFont.copyWith(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w600),
-                                )),
+                              alignment: Alignment.bottomRight,
+                              child: Text(
+                                "Lihat Semua",
+                                style: greenTextFont.copyWith(
+                                    fontSize: 12, fontWeight: FontWeight.w600),
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -633,6 +624,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             );
                           },
                         ),
+                      ),
+                      SizedBox(
+                        height: 10,
                       ),
                       Wrap(
                         spacing: 10,
@@ -706,6 +700,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             ],
           ),
         ),
+        backgroundColor: Colors.white,
       ),
     );
   }
