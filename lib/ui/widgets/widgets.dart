@@ -8,3 +8,5 @@ import 'package:tokopedia_clone/shared/shared.dart';
 part 'menu_list.dart';
 part 'kategori_list.dart';
 part 'produk_card.dart';
+part 'keranjang_card.dart';
+part 'detail_produk.dart';

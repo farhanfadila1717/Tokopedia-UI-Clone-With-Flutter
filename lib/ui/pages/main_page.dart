@@ -57,7 +57,9 @@ class _MainPageState extends State<MainPage> {
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.05),
+                color: (bottomNavbarIndex == 3)
+                    ? Colors.transparent
+                    : Colors.black.withOpacity(0.05),
                 spreadRadius: 5,
                 blurRadius: 20,
                 offset: Offset(0, -4),

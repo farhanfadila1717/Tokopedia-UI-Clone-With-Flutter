@@ -9,7 +9,8 @@ class _KeranjangPageState extends State<KeranjangPage> {
   Color statusBarColor;
   List<bool> checkBox;
   bool checkAll = true;
-
+  int totalHarga = 0;
+  var i;
   @override
   void initState() {
     statusBarColor = mainColor;
@@ -18,13 +19,15 @@ class _KeranjangPageState extends State<KeranjangPage> {
 
   @override
   Widget build(BuildContext context) {
-    int totalHarga = 0;
     double widthSize = MediaQuery.of(context).size.width;
-    List<Produk> keranjangProduk = dummyProduk.sublist(5, 8);
+    List<Produk> keranjangProduk = dummyProduk.sublist(1, 3);
 
-    for (var i = 0; i < keranjangProduk.length; i++) {
+    for (i = 0; i < keranjangProduk.length;) {
       totalHarga += keranjangProduk[i].hargaProduk;
+
+      i++;
     }
+
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
         statusBarIconBrightness: Brightness.dark,
@@ -82,12 +85,11 @@ class _KeranjangPageState extends State<KeranjangPage> {
                           ],
                         ),
                       ),
-                      Container(
-                        height: 150,
-                        width: double.infinity,
-                        color: accentColor1,
-                        child: Placeholder(),
-                      ),
+                      Wrap(
+                        runSpacing: 10,
+                        spacing: 10,
+                        children: listOfKeranjang(widthSize),
+                      )
                     ],
                   ),
                 ),
@@ -193,9 +195,127 @@ class _KeranjangPageState extends State<KeranjangPage> {
               Positioned(
                 bottom: 60,
                 child: Container(
-                  height: 60,
+                  padding: EdgeInsets.symmetric(
+                      vertical: 15, horizontal: defaultMargin),
                   width: widthSize,
-                  color: mainColor,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: accentColor3.withOpacity(0.3),
+                        blurRadius: 3,
+                        offset: Offset(0, -3),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: 55,
+                        width: double.infinity,
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(
+                            width: 1,
+                            color: accentColor3.withOpacity(0.3),
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 25,
+                              width: 25,
+                              decoration: BoxDecoration(
+                                color: mainColor,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "%",
+                                  style: whiteTextFont,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "Makin Hemat Pakai Promo",
+                              style: blackTextFont.copyWith(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Spacer(),
+                            Icon(
+                              Icons.arrow_forward_ios,
+                              size: 20,
+                              color: accentColor3,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        height: 40,
+                        width: double.infinity,
+                        child: Row(
+                          children: [
+                            Container(
+                              height: double.infinity,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Total Harga",
+                                    style: blackTextFont.copyWith(
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  Spacer(),
+                                  Text(
+                                    NumberFormat.currency(
+                                      locale: 'id_ID',
+                                      symbol: 'Rp',
+                                      decimalDigits: 0,
+                                    ).format(totalHarga),
+                                    style: whiteTextFont.copyWith(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.deepOrange[600],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Spacer(),
+                            Container(
+                              height: double.infinity,
+                              width: widthSize * 0.35,
+                              decoration: BoxDecoration(
+                                color: Colors.deepOrange[600],
+                                borderRadius: BorderRadius.circular(6),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "Beli (${keranjangProduk.length.toString()})",
+                                  style: whiteTextFont.copyWith(
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -204,5 +324,15 @@ class _KeranjangPageState extends State<KeranjangPage> {
         backgroundColor: Colors.white,
       ),
     );
+  }
+
+  List<Widget> listOfKeranjang(double widthSize) {
+    List<Kategori> newKategori = dummyKategori;
+
+    return newKategori
+        .map((e) => KeranjangCard(
+              widthSize: widthSize,
+            ))
+        .toList();
   }
 }

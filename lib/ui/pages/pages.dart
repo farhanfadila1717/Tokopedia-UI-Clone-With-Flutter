@@ -4,6 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'package:tokopedia_clone/models/models.dart';
 import 'package:tokopedia_clone/shared/shared.dart';
 import 'package:flutter_svg/flutter_svg.dart';

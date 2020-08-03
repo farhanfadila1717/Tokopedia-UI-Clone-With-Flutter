@@ -2,20 +2,15 @@ part of 'models.dart';
 
 class Produk {
   final String fotoProduk;
-  final String namaProduk;
-  final int hargaProduk;
-  final double ratingProduk;
-  final int totalBeliProduk;
-  final String kotaTokoProduk;
-  final String statusToko;
-  final int sisaProduk;
-  final String detailProduk;
+  final String namaProduk, namaToko, kotaTokoProduk, statusToko, detailProduk;
+  final int hargaProduk, totalBeliProduk, sisaProduk;
+  final double ratingProduk, promo;
   final bool isFavorite;
-  final double promo;
 
   Produk({
     this.namaProduk,
     this.fotoProduk,
+    this.namaToko,
     this.hargaProduk,
     this.ratingProduk,
     this.kotaTokoProduk,
@@ -32,6 +27,7 @@ class Produk {
 List<Produk> dummyProduk = [
   Produk(
     namaProduk: "Shark Helmet",
+    namaToko: "Toko Bangben",
     fotoProduk: "assets/img/helm.jpg",
     hargaProduk: 700000,
     ratingProduk: 4.5,
@@ -42,6 +38,7 @@ List<Produk> dummyProduk = [
   ),
   Produk(
       namaProduk: "Samsung A 51",
+      namaToko: "Toko Jaya Makmur",
       fotoProduk: "assets/img/hp_samsung.jpg",
       hargaProduk: 4699000,
       ratingProduk: 3.6,
@@ -52,6 +49,7 @@ List<Produk> dummyProduk = [
       isFavorite: true),
   Produk(
     namaProduk: "Xiaomi Note 9s",
+    namaToko: "Xiaomi Official Store",
     fotoProduk: "assets/img/hp_xiaomi.jpg",
     hargaProduk: 3150000,
     ratingProduk: 4.7,
@@ -63,6 +61,7 @@ List<Produk> dummyProduk = [
   ),
   Produk(
     namaProduk: "Mechanical Keyboard Gaming",
+    namaToko: "Galaxy Gaming",
     fotoProduk: "assets/img/keyboard.jpg",
     hargaProduk: 150000,
     ratingProduk: 4.2,
@@ -73,6 +72,7 @@ List<Produk> dummyProduk = [
   ),
   Produk(
     namaProduk: "Macbook Pro 2016",
+    namaToko: "Sinar Gadget",
     fotoProduk: "assets/img/laptop.jpg",
     hargaProduk: 12000000,
     ratingProduk: 4,
@@ -83,6 +83,7 @@ List<Produk> dummyProduk = [
   ),
   Produk(
     namaProduk: "Huawei Matebook D14",
+    namaToko: "Koye Electrinic",
     fotoProduk: "assets/img/matebook.jpg",
     hargaProduk: 10500000,
     ratingProduk: 4.4,
@@ -93,6 +94,7 @@ List<Produk> dummyProduk = [
   ),
   Produk(
     namaProduk: "HP Monitor 24mh",
+    namaToko: "Koye Electronic",
     fotoProduk: "assets/img/monitor_hp.jpg",
     hargaProduk: 150000,
     ratingProduk: 4.7,
@@ -103,6 +105,7 @@ List<Produk> dummyProduk = [
   ),
   Produk(
     namaProduk: "HP Mouse Black",
+    namaToko: "Koye Electronic",
     fotoProduk: "assets/img/mouse.jpg",
     hargaProduk: 150000,
     ratingProduk: 4.7,
@@ -113,6 +116,7 @@ List<Produk> dummyProduk = [
   ),
   Produk(
     namaProduk: "Parfume For Woman",
+    namaToko: "Leli Fashion Murah",
     fotoProduk: "assets/img/parfume.jpg",
     hargaProduk: 300000,
     ratingProduk: 4.5,
@@ -123,6 +127,7 @@ List<Produk> dummyProduk = [
   ),
   Produk(
     namaProduk: "Playstation 5",
+    namaToko: "Buye Electronic",
     fotoProduk: "assets/img/ps_5.jpg",
     hargaProduk: 7000000,
     ratingProduk: 4.2,
@@ -133,6 +138,7 @@ List<Produk> dummyProduk = [
   ),
   Produk(
     namaProduk: "RD Shimano Alivio",
+    namaToko: "Gede Sports",
     fotoProduk: "assets/img/rd_alivio.jpg",
     hargaProduk: 350000,
     ratingProduk: 4.1,
@@ -143,6 +149,7 @@ List<Produk> dummyProduk = [
   ),
   Produk(
     namaProduk: "Sepeda MTB Polygon",
+    namaToko: "Goes Santai",
     fotoProduk: "assets/img/sepeda_polygon.jpg",
     hargaProduk: 7000000,
     ratingProduk: 4.7,
@@ -153,6 +160,7 @@ List<Produk> dummyProduk = [
   ),
   Produk(
     namaProduk: "Nutrica Aptamil",
+    namaToko: "Nutre Official",
     fotoProduk: "assets/img/susu_bayi.jpg",
     hargaProduk: 130000,
     ratingProduk: 4.3,
@@ -163,6 +171,7 @@ List<Produk> dummyProduk = [
   ),
   Produk(
     namaProduk: "SGM Ananda 0-6 Bulan",
+    namaToko: "Keoko Mart",
     fotoProduk: "assets/img/susu_sgm.jpg",
     hargaProduk: 70000,
     ratingProduk: 4.5,
