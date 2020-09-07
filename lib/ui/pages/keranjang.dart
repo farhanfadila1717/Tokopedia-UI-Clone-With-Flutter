@@ -10,24 +10,34 @@ class _KeranjangPageState extends State<KeranjangPage> {
   List<bool> checkBox;
   bool checkAll = true;
   int totalHarga = 0;
+  DateTime timeNow = DateTime.now();
   var i;
   @override
   void initState() {
     statusBarColor = mainColor;
+    total();
     super.initState();
+  }
+
+  int total() {
+    List<Produk> keranjangProduk = dummyProduk.sublist(1, 3);
+
+    for (i = 0; i < keranjangProduk.length;) {
+      setState(() {
+        totalHarga += keranjangProduk[i].hargaProduk;
+      });
+
+      i++;
+    }
+
+    return totalHarga;
   }
 
   @override
   Widget build(BuildContext context) {
     double widthSize = MediaQuery.of(context).size.width;
+    double heightSize = MediaQuery.of(context).size.height;
     List<Produk> keranjangProduk = dummyProduk.sublist(1, 3);
-
-    for (i = 0; i < keranjangProduk.length;) {
-      totalHarga += keranjangProduk[i].hargaProduk;
-
-      i++;
-    }
-
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
         statusBarIconBrightness: Brightness.dark,
@@ -75,7 +85,7 @@ class _KeranjangPageState extends State<KeranjangPage> {
                               padding: EdgeInsets.symmetric(
                                   horizontal: defaultMargin, vertical: 10),
                               child: Text(
-                                "Bonus 10 kuota Bebas Ongkir hingga 31 Juli 2020. Sisa kuotamu 19x(untuk 1 pesanan/transaksi).",
+                                "Bonus 10 kuota Bebas Ongkir hingga ${timeNow.dateAndTime}. Sisa kuotamu 19x(untuk 1 pesanan/transaksi).",
                                 style: blackTextFont.copyWith(
                                     fontSize: 12, fontWeight: FontWeight.w500),
                                 softWrap: true,
@@ -88,7 +98,7 @@ class _KeranjangPageState extends State<KeranjangPage> {
                       Wrap(
                         runSpacing: 10,
                         spacing: 10,
-                        children: listOfKeranjang(widthSize),
+                        children: listOfKeranjang(widthSize, heightSize),
                       )
                     ],
                   ),
@@ -326,13 +336,17 @@ class _KeranjangPageState extends State<KeranjangPage> {
     );
   }
 
-  List<Widget> listOfKeranjang(double widthSize) {
+  List<Widget> listOfKeranjang(double widthSize, double heightSize) {
     List<Kategori> newKategori = dummyKategori;
 
     return newKategori
-        .map((e) => KeranjangCard(
-              widthSize: widthSize,
-            ))
+        .map(
+          (e) => KeranjangCard(
+            heightSize: heightSize,
+            widthSize: widthSize,
+            kategori: e,
+          ),
+        )
         .toList();
   }
 }

@@ -9,7 +9,7 @@ import 'package:tokopedia_clone/models/models.dart';
 import 'package:tokopedia_clone/shared/shared.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tokopedia_clone/ui/widgets/widgets.dart';
-
+import 'package:tokopedia_clone/extensions/extensions.dart';
 part 'main_page.dart';
 part 'home.dart';
 part 'feed.dart';
