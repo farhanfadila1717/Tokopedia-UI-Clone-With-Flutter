@@ -21,6 +21,7 @@ In the near future this project will not have any changes. But I plan to make a 
 [flutter]: https://img.shields.io/badge/Platform-Flutter-02569B?logo=flutter
 [web flutter]: https://flutter.dev
 [account avatar]: https://avatars.githubusercontent.com/u/43161050?s=80
+[github account]: https://github.com/farhanfadila1717
 [badge linktree]: https://img.shields.io/badge/Donate-farhanfadila-orange
 [linktree account]: https://linktr.ee/farhanfadila
 [badge paypal]: https://img.shields.io/badge/Donate-PayPal-00457C?logo=paypal
