@@ -1,28 +1,16 @@
-# Tokopedia Clone v.2020 Clone With Flutter
-[![flutter][]][web flutter] [![badge paypal][]][paypal account] [![badge linktree][]][linktree account] <br>
-> Tokopedia UI Clone With Flutter, is used flutter v.1
-In the near future this project will not have any changes. But I plan to make a clone of the latest version Tokopedia.
+# tokopedia_flutter
 
-<img src="image/home.jpg" width="200"> &nbsp;
-<img src="image/akun.jpg" width="200">
+A new Flutter project.
 
+## Getting Started
 
+This project is a starting point for a Flutter application.
 
----
+A few resources to get you started if this is your first Flutter project:
 
-### 🚧 Maintener 
-[![account avatar][]][github account] <br>
-**Farhan Fadila** <br>
-📫 How to reach me: farhan.fadila1717@gmail.com
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-### ❤️ Suport Maintener
-[![badge paypal][]][paypal account] [![badge linktree][]][linktree account]
-
-[flutter]: https://img.shields.io/badge/Platform-Flutter-02569B?logo=flutter
-[web flutter]: https://flutter.dev
-[account avatar]: https://avatars.githubusercontent.com/u/43161050?s=80
-[github account]: https://github.com/farhanfadila1717
-[badge linktree]: https://img.shields.io/badge/Donate-farhanfadila-orange
-[linktree account]: https://linktr.ee/farhanfadila
-[badge paypal]: https://img.shields.io/badge/Donate-PayPal-00457C?logo=paypal
-[paypal account]: https://www.paypal.me/farhanfadila1717
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
